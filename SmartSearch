@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{
+      margin:0;
+      font-family:Avenir, Arial, sans-serif;
+      color:#091153;
+      background:#ffffff;
+    }
+    .wrap{ padding:22px 26px; }
+    .title{ font-size:22px; font-weight:800; text-align:center; margin:0 0 8px 0; }
+    .sub{ font-size:14px; text-align:center; margin:0 0 16px 0; opacity:0.9; }
+    .row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; }
+    input{
+      width:720px; max-width:100%;
+      height:46px; border-radius:999px;
+      border:2px solid rgba(9,17,83,0.15);
+      padding:0 16px; font-size:14px; outline:none; box-sizing:border-box;
+    }
+    input:focus{
+      border-color:rgba(0,121,255,0.85);
+      box-shadow:0 0 0 4px rgba(0,121,255,0.14);
+    }
+    button{
+      padding:10px 22px; border-radius:999px;
+      font-size:14px; font-weight:800; cursor:pointer;
+      border:2px solid transparent; color:#091153;
+      background-image:linear-gradient(#fff,#fff), linear-gradient(90deg,#00a1ff,#7b2cff);
+      background-origin:border-box; background-clip:padding-box, border-box;
+      transition:all 0.2s ease-in-out;
+    }
+    button:hover{ color:#fff; background-image:linear-gradient(90deg,#00a1ff,#7b2cff); }
+
+    .chips{ margin-top:14px; text-align:center; }
+    .chip{
+      display:inline-block; margin:6px 6px 0; padding:8px 14px;
+      border-radius:999px; font-size:13px;
+      border:1px solid rgba(9,17,83,0.15);
+      text-decoration:none; color:#091153;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">Search Sky Learn</div>
+    <div class="sub">Find learning, playlists and resources in seconds.</div>
+
+    <!-- Key bit: submits to smartsearch with q=, and target _top replaces the whole page -->
+    <form class="row" action="https://sky.edcast.com/smartsearch" method="GET" target="_top">
+      <input name="q" type="text" placeholder="Try: leadership, objectives, feedback, coaching…" />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="chips">
+      <a class="chip" href="https://sky.edcast.com/smartsearch?q=leadership" target="_top">Leadership</a>
+      <a class="chip" href="https://sky.edcast.com/smartsearch?q=objectives" target="_top">Objectives</a>
+      <a class="chip" href="https://sky.edcast.com/smartsearch?q=feedback" target="_top">Feedback</a>
+      <a class="chip" href="https://sky.edcast.com/smartsearch?q=AI" target="_top">AI</a>
+    </div>
+  </div>
+</body>
+</html>
